@@ -1,3 +1,4 @@
+import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 import './App.css';
 import MainPage from "./main";
 import {Switch, Route, Link} from 'react-router-dom';
