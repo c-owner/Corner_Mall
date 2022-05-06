@@ -1,6 +1,6 @@
 import './App.css';
 import MainPage from "./main";
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, Link} from 'react-router-dom';
 import ProductPage from "./product";
 import UploadPage from "./upload";
 import React from "react";
@@ -13,7 +13,9 @@ function App() {
             {/*<Route exact path={"/upload"} component={UploadPage} />*/}
             <div id="header">
                 <div id="header-area">
+                    <Link className="product-link" to={"/"}>
                     <img src="/images/icons/logo.png" alt=""/>
+                    </Link>
                 </div>
             </div>
             <Switch>
