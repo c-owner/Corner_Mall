@@ -14,33 +14,33 @@ function MainPage() {
                 console.log(err);
             });
         }, []);
+
+    if (products === null) {
+        return <h1>상품 정보를 가져오고 있습니다..</h1>
+    }
+
     return (
         <div>
-            <div id="header">
-                <div id="header-area">
-                    <img src="images/icons/logo.png"/>
-                </div>
-            </div>
             <div id="body">
                 <div id="banner">
-                    <img src="images/banners/banner1.png"/>
+                    <img src="images/banners/banner1.png" alt=""/>
                 </div>
                 <h1>판매되는 상품들</h1>
                 <div id="product-list">
                     {
-                        products.map(function (product, index) {
+                        products.map(function (item, p_idx) {
                             return (
                                 <div className="product-card">
-                                    <Link className={"product-link"} to={`/product/${index}`}>
+                                    <Link className={"product-link"} to={`/product/${item.id}`}>
                                         <div>
-                                            <img className="product-img" src={product.imageUrl}/>
+                                            <img className="product-img" src={item.imageUrl} alt=""/>
                                         </div>
                                         <div className={"product-contents"}>
-                                            <span className="product-name">{product.name}</span>
-                                            <span className="product-price">{product.price}원</span>
+                                            <span className="product-name">{item.name}</span>
+                                            <span className="product-price">{item.price}원</span>
                                             <div className="product-seller">
-                                                <img className="product-avatar" src={product.imageUrl}/>
-                                                <span>{product.seller}</span>
+                                                <img className="product-avatar" src="images/icons/avatar.png" alt=""/>
+                                                <span>{item.seller}</span>
                                             </div>
                                         </div>
                                     </Link>
@@ -50,9 +50,7 @@ function MainPage() {
                     }
                 </div>
             </div>
-            <div id="footer">
 
-            </div>
         </div>
     );
 }

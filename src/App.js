@@ -3,22 +3,33 @@ import MainPage from "./main";
 import {Switch, Route} from 'react-router-dom';
 import ProductPage from "./product";
 import UploadPage from "./upload";
+import React from "react";
 
 function App() {
     return (
         <div>
+            {/*<Route exact path={"/"} component={MainPage} />*/}
+            {/*<Route exact path={"/product/:id"} component={ProductPage} />*/}
+            {/*<Route exact path={"/upload"} component={UploadPage} />*/}
+            <div id="header">
+                <div id="header-area">
+                    <img src="/images/icons/logo.png" alt=""/>
+                </div>
+            </div>
             <Switch>
-                {/* exact를 true 하지 않으면 컴포넌트가 아래 템플릿에 덧붙여 보임 */}
-                <Route exact={true} path={"/"}>
+                <Route exact path={"/"}>
                     <MainPage/>
                 </Route>
-                <Route exact={true} path={"/product/:id"}>
+                <Route exact path={"/product/:id"}>
                     <ProductPage/>
                 </Route>
-                <Route exact={true} path={"/upload"}>
+                <Route exact path={"/upload"}>
                     <UploadPage/>
                 </Route>
             </Switch>
+            <div id="footer">
+
+            </div>
         </div>
     );
 }
