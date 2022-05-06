@@ -31,7 +31,7 @@ function MainPage() {
                         products.map(function (item, p_idx) {
                             return (
                                 <div className="product-card">
-                                    <Link className={"product-link"} to={`/product/${item.id}`}>
+                                    <Link style={{ color: "inherit" }} className={"product-link"} to={`/product/${item.id}`}>
                                         <div>
                                             <img className="product-img" src={item.imageUrl} alt=""/>
                                         </div>
