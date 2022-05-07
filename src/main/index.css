@@ -70,6 +70,13 @@
   text-decoration: none;
 }
 
+.product-footer {
+ display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
 #image-box {
   height: 300px;
   display: flex;
