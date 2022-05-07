@@ -1,3 +1,12 @@
+# Frontend React Mall Project.
+Site Connect : [🔗Connect Link](http://corner-mac.kro.kr:8080)
+
+**Backend Server**
+
+Node Express
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
