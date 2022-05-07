@@ -4,6 +4,7 @@ import axios from "axios";
 import {Link} from "react-router-dom";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+import {API_URL} from "../config/constants";
 
 dayjs.extend(relativeTime);
 
@@ -12,7 +13,7 @@ function MainPage() {
     React.useEffect(function () {
         axios
             .get(
-                "http://localhost:8080/products"
+                `${API_URL}/products`
             )
             .then(function (result) {
                 const products = result.data.products;
@@ -39,7 +40,7 @@ function MainPage() {
                                 to={`/products/${product.id}`}
                             >
                                 <div>
-                                    <img className="product-img" src={product.imageUrl}/>
+                                    <img className="product-img" src={API_URL+"/"+product.imageUrl}/>
                                 </div>
                                 <div className="product-contents">
                                     <span className="product-name">{product.name}</span>
