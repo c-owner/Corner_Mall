@@ -3,6 +3,7 @@ import axios from "axios";
 import {useEffect, useState} from "react";
 import "./index.css";
 import {API_URL} from "../config/constants";
+import dayjs from "dayjs";
 
 function ProductPage() {
     const {id} = useParams();
@@ -27,7 +28,7 @@ function ProductPage() {
     return (
         <div>
             <div id="image-box">
-                <img src={"/" + product.imageUrl}/>
+                <img src={`${API_URL}/${product.imageUrl}`}/>
             </div>
             <div id="profile-box">
                 <img src="/images/icons/avatar.png"/>
@@ -36,8 +37,9 @@ function ProductPage() {
             <div id="contents-box">
                 <div id="name">{product.name}</div>
                 <div id="price">{product.price}원</div>
-                <div id="createdAt">{product.createdAt}</div>
-                <div id="description">{product.description} </div>
+                <div id="createdAt">{dayjs(product.createdAt).format('YYYY년 MM월 DD일 HH:MM')}</div>
+                {/* 줄바꿈 텍스트를 그대로 바꾸기 위해서 pre태그로 사용 */}
+                <pre id="description">{product.description} </pre>
             </div>
         </div>
     );

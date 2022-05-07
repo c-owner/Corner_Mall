@@ -5,7 +5,6 @@
 
 #banner {
     height: 300px;
-    background-color: yellow;
 }
 
 #banner > img {
@@ -37,6 +36,7 @@
 .product-img {
     width: 100%;
     height: 210px;
+    object-fit: contain;
 }
 
 .product-contents {
@@ -76,9 +76,19 @@
     align-items: center;
     margin-top: 12px;
 }
+.product-seller > span {
+    text-overflow: ellipsis;
+    width: 54px;
+    overflow: hidden;
+    white-space: nowrap;
+}
 .product-date {
     font-size: 12px;
     color: rgb(136,136,136);
+    white-space: pre;
+}
+#product-headline {
+    margin-top: 8px;
 }
 
 #image-box {
@@ -92,24 +102,7 @@
     height: 100%;
 }
 
-#profile-box {
-    padding: 16px;
-    margin-top: 8px;
-    border-bottom: 1px solid #e9ecef;
-    display: flex;
-    align-items: center;
-}
 
-#profile-box > img {
-    width: 50px;
-    height: 50px;
-}
-
-#profile-box > span {
-    font-size: 15px;
-    margin-left: 8px;
-    font-weight: 600;
-}
 
 #content-box {
     padding: 16px;
@@ -133,3 +126,4 @@
 #description {
     margin-top: 16px;
 }
+
