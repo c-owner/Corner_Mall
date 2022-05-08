@@ -59,12 +59,3 @@ body,
         margin: 0 0 0 auto;
     }
 }
-@media screen and (max-width: 383px) {
-    .product-card {
-
-    }
-    .content {
-        padding: 0 8px;
-    }
-
-}
