@@ -7,6 +7,7 @@ import ProductPage from "./product/product";
 import {Button} from "antd";
 import {DownloadOutlined} from "@ant-design/icons";
 import {useEffect} from "react";
+import UpdatePage from "./product_update/update";
 
 function App() {
     const history = useHistory();
@@ -19,7 +20,7 @@ function App() {
                         <img src="/images/icons/logo.png" alt=""/>
                     </Link>
                     {
-                        location.pathname === '/upload' ?
+                        location.pathname === '/upload' || '/products/:id/update' ?
                             <span></span> :
                             <Button
                                 size="large"
@@ -40,6 +41,9 @@ function App() {
                     </Route>
                     <Route exact={true} path="/products/:id">
                         <ProductPage/>
+                    </Route>
+                    <Route exact={true} path="/products/:id/update">
+                        <UpdatePage/>
                     </Route>
                     <Route exact={true} path="/upload">
                         <UploadPage/>

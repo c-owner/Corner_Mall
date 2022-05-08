@@ -9,13 +9,11 @@ import {Button, message} from "antd";
 function ProductPage() {
     const {id} = useParams();
     const [product, setProduct] = useState(null);
-    const history = useHistory();
+    const history = useHistory()
 
     const getProduct = () => {
         axios
-            .get(
-                `${API_URL}/products/${id}`
-            )
+            .get(`${API_URL}/products/${id}`)
             .then(function (result) {
                 setProduct(result.data.product);
             })
@@ -42,27 +40,21 @@ function ProductPage() {
         });
     }
 
-    // function movePage(url) {
-    //     history.push(url);
-    // }
-
-
-    return (
-        <div>
+    return (<div>
             <div className="update-btn-wrap">
                 <Button className="update-btn"
                         disabled={product.soldout === 1}
-                        // onClick={movePage(`/products/${id}/update`)}
+                        onClick={function () {
+                            history.push(`/products/${id}/update`);
+                        }}
                         size="large" type="primary">
                     상품 수정
                 </Button>
             </div>
             <div id="image-box">
-                {
-                    product.soldout === 1 && <div className="product-blur">
-                        <div class="soldout">SOLDOUT</div>
-                    </div>
-                }
+                {product.soldout === 1 && <div className="product-blur">
+                    <div class="soldout">SOLDOUT</div>
+                </div>}
                 <img src={`${API_URL}/${product.imageUrl}`}/>
             </div>
             <div id="profile-box">
@@ -82,8 +74,7 @@ function ProductPage() {
                 {/* 줄바꿈 텍스트를 그대로 바꾸기 위해서 pre태그로 사용 */}
                 <pre id="description">{product.description} </pre>
             </div>
-        </div>
-    );
+        </div>);
 }
 
 export default ProductPage;

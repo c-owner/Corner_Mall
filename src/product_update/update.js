@@ -1,14 +1,35 @@
 import {Button, Divider, Form, Input, InputNumber, message, Upload} from 'antd';
-import "./upload.css";
-import {useState} from "react";
+import "./update.css";
 import {API_URL} from "../config/constants";
 import axios from "axios";
-import {useHistory} from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
+import React, {useEffect, useState} from "react";
 
-function UploadPage() {
-    const [imageUrl, setImageUrl] = useState(null);
+function UpdatePage() {
+    const [imageUrl, setImageUrl, product, setProduct] = useState(null);
     // react hook / useState, useHistory
     const history = useHistory();
+    const {id} = useParams();
+
+    const getProduct = () => {
+        axios
+            .get(
+                `${API_URL}/products/${id}`
+            )
+            .then(function (result) {
+                setProduct(result.data.product);
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
+    }
+
+    useEffect(function () {
+        getProduct();
+    }, []);
+    if (product === null) {
+        return <h1>상품 정보를 받고 있습니다...</h1>;
+    }
     const onSubmit = (values) => {
         axios.post(`${API_URL}/products`, {
             name: values.name,
@@ -109,11 +130,11 @@ function UploadPage() {
                     />
                 </Form.Item>
                 <Form.Item>
-                    <Button id="submit-button" size="large" htmlType="submit">상품 등록하기</Button>
+                    <Button id="submit-button" size="large" htmlType="submit">상품 수정하기</Button>
                 </Form.Item>
             </Form>
         </div>
     );
 }
 
-export default UploadPage;
+export default UpdatePage;
