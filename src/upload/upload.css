@@ -1,5 +1,7 @@
 #upload-container {
     padding-top: 36px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #upload-img-placeholder {

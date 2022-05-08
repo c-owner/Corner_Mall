@@ -33,58 +33,63 @@ function MainPage() {
     //-
     return (
         <div>
-            <Carousel autoplay autoplaySpeed={3000}>
-                {
-                    banners.map((banner, index) => {
-                        return (
-                            <Link to={banner.href}>
-                                <div id="banner">
-                                    <img src={`${API_URL}/${banner.imageUrl}`} alt=""/>
-                                </div>
-                            </Link>
-                        );
-                    })
-                }
-            </Carousel>
-            <h1 id="product-headline">판매되는 상품들</h1>
-            <div id="product-list">
-                {products.map(function (product, index) {
-                    return (
-                        <div className="product-card">
-                            {
-                                product.soldout === 1 && <div className="product-blur">
-                                    <div class="soldout">SOLDOUT</div>
-                                </div>
-                            }
-                            <Link
-                                style={{color: "inherit"}}
-                                className="product-link"
-                                to={`/products/${product.id}`}
-                            >
-                                <div>
-                                    <img className="product-img" src={API_URL + "/" + product.imageUrl}/>
-                                </div>
-                                <div className="product-contents">
-                                    <span className="product-name">{product.name}</span>
-                                    <span className="product-price">{product.price}원</span>
-                                    <div className="product-footer">
-                                        <div className="product-seller">
-                                            <img
-                                                className="product-avatar"
-                                                src="images/icons/avatar.png"
-                                            />
-                                            <span>{product.seller}</span>
-                                        </div>
-                                        <span className="product-date">{dayjs(product.createdAt).fromNow()}</span>
+            <div className="banner-container">
+                <Carousel autoplay autoplaySpeed={3000}>
+                    {
+                        banners.map((banner, index) => {
+                            return (
+                                <Link to={banner.href}>
+                                    <div id="banner">
+                                        <img src={`${API_URL}/${banner.imageUrl}`} alt=""/>
                                     </div>
-                                </div>
-                            </Link>
-                        </div>
-                    );
-                })}
-                    </div>
-                    </div>
-                    );
-                }
+                                </Link>
+                            );
+                        })
+                    }
+                </Carousel>
+            </div>
+            <div className="content">
 
-                    export default MainPage;
+                <h1 id="product-headline">판매되는 상품들</h1>
+                <div id="product-list">
+                    {products.map(function (product, index) {
+                        return (
+                            <div className="product-card">
+                                {
+                                    product.soldout === 1 && <div className="product-blur">
+                                        <div class="soldout">SOLDOUT</div>
+                                    </div>
+                                }
+                                <Link
+                                    style={{color: "inherit"}}
+                                    className="product-link"
+                                    to={`/products/${product.id}`}
+                                >
+                                    <div>
+                                        <img className="product-img" src={API_URL + "/" + product.imageUrl}/>
+                                    </div>
+                                    <div className="product-contents">
+                                        <span className="product-name">{product.name}</span>
+                                        <span className="product-price">{product.price}원</span>
+                                        <div className="product-footer">
+                                            <div className="product-seller">
+                                                <img
+                                                    className="product-avatar"
+                                                    src="images/icons/avatar.png"
+                                                />
+                                                <span>{product.seller}</span>
+                                            </div>
+                                            <span className="product-date">{dayjs(product.createdAt).fromNow()}</span>
+                                        </div>
+                                    </div>
+                                </Link>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default MainPage;

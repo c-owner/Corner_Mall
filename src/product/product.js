@@ -1,4 +1,4 @@
-import {useParams} from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
 import axios from "axios";
 import React, {useEffect, useState} from "react";
 import "./product.css";
@@ -9,6 +9,7 @@ import {Button, message} from "antd";
 function ProductPage() {
     const {id} = useParams();
     const [product, setProduct] = useState(null);
+    const history = useHistory();
 
     const getProduct = () => {
         axios
@@ -41,10 +42,18 @@ function ProductPage() {
         });
     }
 
+    // function movePage(url) {
+    //     history.push(url);
+    // }
+
+
     return (
         <div>
             <div className="update-btn-wrap">
-                <Button className="update-btn" size="large" type="primary">
+                <Button className="update-btn"
+                        disabled={product.soldout === 1}
+                        // onClick={movePage(`/products/${id}/update`)}
+                        size="large" type="primary">
                     상품 수정
                 </Button>
             </div>

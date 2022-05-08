@@ -28,7 +28,7 @@ function App() {
                                 }}
                                 icon={<DownloadOutlined/>}
                             >
-                                상품 업로드
+                                상품 등록
                             </Button>
                     }
                 </div>
