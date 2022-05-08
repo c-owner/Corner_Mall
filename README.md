@@ -1,5 +1,5 @@
 # Frontend React Mall Project.
-Site Connect : [🔗Connect Link](http://corner-mac.kro.kr:3000)
+Site Connect : [🔗Connect Link](https://vercel.com/eight-corner/corner-mall-client)
 
 **Backend Server**
 
