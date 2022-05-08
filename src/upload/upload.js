@@ -1,5 +1,5 @@
 import {Button, Divider, Form, Input, InputNumber, message, Upload} from 'antd';
-import "./index.css";
+import "./upload.css";
 import {useState} from "react";
 import {API_URL} from "../config/constants";
 import axios from "axios";

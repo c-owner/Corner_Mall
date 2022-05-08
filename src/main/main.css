@@ -31,6 +31,29 @@
     border: 1px solid rgb(230, 230, 230);
     border-radius: 12px;
     overflow: hidden;
+    position: relative;
+}
+
+.product-blur {
+    position: absolute;
+    /* 모든 영역을 차지 */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FFFFFFaa;
+    /* 해당 스타일에 클릭 이벤트 제거 */
+    pointer-events: none;
+}
+
+.soldout {
+    color: #EE5858;
+    font-weight: 600;
+    font-size: 26px;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top: 25%;
 }
 
 .product-img {
@@ -76,17 +99,20 @@
     align-items: center;
     margin-top: 12px;
 }
+
 .product-seller > span {
     text-overflow: ellipsis;
     width: 54px;
     overflow: hidden;
     white-space: nowrap;
 }
+
 .product-date {
     font-size: 12px;
-    color: rgb(136,136,136);
+    color: rgb(136, 136, 136);
     white-space: pre;
 }
+
 #product-headline {
     margin-top: 8px;
 }
@@ -101,7 +127,6 @@
 #image-box > img {
     height: 100%;
 }
-
 
 
 #content-box {

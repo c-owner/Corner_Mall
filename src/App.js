@@ -1,9 +1,9 @@
 import "antd/dist/antd.min.css";
 import "./App.css";
-import MainPageComponent from "./main";
+import MainPageComponent from "./main/main";
 import {Switch, Route, Link, useHistory, useLocation} from "react-router-dom";
-import UploadPage from "./upload";
-import ProductPage from "./product";
+import UploadPage from "./upload/upload";
+import ProductPage from "./product/product";
 import {Button} from "antd";
 import {DownloadOutlined} from "@ant-design/icons";
 import {useEffect} from "react";

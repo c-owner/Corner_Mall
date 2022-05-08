@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.css";
+import "./main.css";
 import axios from "axios";
 import {Link} from "react-router-dom";
 import dayjs from "dayjs";
@@ -51,6 +51,11 @@ function MainPage() {
                 {products.map(function (product, index) {
                     return (
                         <div className="product-card">
+                            {
+                                product.soldout === 1 && <div className="product-blur">
+                                    <div class="soldout">SOLDOUT</div>
+                                </div>
+                            }
                             <Link
                                 style={{color: "inherit"}}
                                 className="product-link"
@@ -77,9 +82,9 @@ function MainPage() {
                         </div>
                     );
                 })}
-            </div>
-        </div>
-    );
-}
+                    </div>
+                    </div>
+                    );
+                }
 
-export default MainPage;
+                    export default MainPage;
