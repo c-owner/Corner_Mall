@@ -20,7 +20,7 @@ function App() {
                         <img src="/images/icons/logo.png" alt=""/>
                     </Link>
                     {
-                        location.pathname === '/upload' || '/products/:id/update' ?
+                        location.pathname === '/upload' ?
                             <span></span> :
                             <Button
                                 size="large"
