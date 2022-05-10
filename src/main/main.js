@@ -50,7 +50,7 @@ function MainPage() {
             </div>
             <div className="content">
 
-                <h1 id="product-headline">판매되는 상품들</h1>
+                <h1 id="product-headline">최근 상품</h1>
                 <div id="product-list">
                     {products.map(function (product, index) {
                         return (
